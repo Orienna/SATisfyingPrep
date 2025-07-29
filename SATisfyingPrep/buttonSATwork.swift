@@ -40,9 +40,6 @@ struct buttonSATwork: View {
                         .frame(maxWidth: .infinity)
                         .frame(height: 150.0)
                     
-                    
-                    
-                    
                 }
                 
                 
@@ -59,14 +56,12 @@ struct buttonSATwork: View {
             
             .padding()
         }
-        background(Color("SkyBlue"))
+      //  background(Color("SkyBlue"))
         }
         
         
         
     }
-    
-
     
     
     #Preview {
