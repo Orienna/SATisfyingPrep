@@ -25,6 +25,9 @@ struct ContentView: View {
                     
                     NavigationLink(destination: mainPage()) {
                         Text("Sign in")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.skyBlue)
                             .frame(width: 300.0, height: 60.0)
                             .background(Color.white)
                             .cornerRadius(10)
@@ -33,6 +36,9 @@ struct ContentView: View {
                     .padding()
                     NavigationLink(destination: mainPage()) {
                         Text("Log in")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.skyBlue)
                             .frame(width: 300.0, height: 60.0)
                             .background(Color.white)
                             .cornerRadius(10)
