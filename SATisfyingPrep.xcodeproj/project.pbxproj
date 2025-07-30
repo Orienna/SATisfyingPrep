@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD668E492E3A8CC200B9C0EF /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD668E472E3A8CC200B9C0EF /* Questions.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		BD668E472E3A8CC200B9C0EF /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		BDC8D1922E3933DE00EFDB86 /* SATisfyingPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SATisfyingPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		BDC8D1892E3933DE00EFDB86 = {
 			isa = PBXGroup;
 			children = (
+				BD668E472E3A8CC200B9C0EF /* Questions.swift */,
 				BDC8D1942E3933DE00EFDB86 /* SATisfyingPrep */,
 				BDC8D1932E3933DE00EFDB86 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD668E492E3A8CC200B9C0EF /* Questions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
