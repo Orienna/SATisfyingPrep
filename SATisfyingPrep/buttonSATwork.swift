@@ -9,7 +9,6 @@ import SwiftUI
 
 struct buttonSATwork: View {
     @State private var name = ""
-    @State private var textTitle = "What subject would you like to study?"
     var body: some View {
         NavigationStack {
             ZStack {
@@ -29,12 +28,14 @@ struct buttonSATwork: View {
                             .cornerRadius(10)
                             .ignoresSafeArea()
                         VStack{
-                            
+                            Spacer()
                             Text("What subject would you")
                                 .font(.title2)
+                                .fontWeight(.bold)
                             Text("like to study?")
                                 .font(.title2)
-                                
+                                .fontWeight(.bold)
+                                Spacer()
                             
                             ZStack{
                                 Rectangle()
@@ -49,13 +50,15 @@ struct buttonSATwork: View {
                                             Text("Go to page!")
                                                 .font(.title2)
                                                 .foregroundColor(Color.black)
-                                                .padding(.leading)
+                                                .padding(.leading, 6.0)
                                                 .frame(width: 100.0, height: 60.0)
                                                 .background(Color.lightBlue)
                                                 .cornerRadius(10)
+                                                
                                         }
                                         .padding(.leading, 180.0)
                                         .padding(.bottom, -57.0)
+                                        .padding(.leading, 25.0)
                                         
                                         VStack(alignment: .leading){
                                             Text("Mathematics:")
@@ -73,9 +76,9 @@ struct buttonSATwork: View {
                                     .padding(.bottom)//VStack
                                 }//HStack
                                 
-                                
                             }//ZStack
                             .padding(.bottom)
+                            Spacer()
                             
                             ZStack{
                                 Rectangle()
@@ -91,13 +94,14 @@ struct buttonSATwork: View {
                                                 .font(.title2)
                                                 .foregroundColor(Color.black)
                                                 
-                                                .padding(.leading)
+                                                .padding(.leading, 6.0)
                                                 .frame(width: 100.0, height: 60.0)
-                                                .background(Color.lightBlue)
+                                                .background(Color.lightPink)
                                                 .cornerRadius(10)
                                         }
                                         .padding(.leading, 190.0)
                                         .padding(.bottom, -57.0)
+                                        .padding(.leading, 25.0)
                                         
                                         VStack(alignment: .leading){
                                             Text("Reading & Writing:")
@@ -121,7 +125,8 @@ struct buttonSATwork: View {
                             .padding(.bottom)
                             
                             
-                        }//VStack
+                        }
+                        .padding(.bottom, 200.0)//VStack
                         
                     }//ZStack
                     Spacer()
