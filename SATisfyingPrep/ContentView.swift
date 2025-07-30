@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var name = ""
+    @State var password = ""
     var body: some View {
         ZStack {
             Color("backgroundPurple").ignoresSafeArea()
@@ -33,7 +35,7 @@ struct ContentView: View {
                             .font(.title3)
                             .padding([.bottom, .trailing], 240.0)
                             .padding(.bottom, 150.0)
-                        TextField("  Insert username here", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                        TextField("  Insert username here", text: $name)
                             .frame(height: 30.0)
                             .border(Color.gray, width:1)
                             .padding(.bottom, 300.0)
@@ -42,7 +44,7 @@ struct ContentView: View {
                             .font(.title3)
                             .padding(.trailing, 240.0)
                             .padding(.bottom, 180.0)
-                        TextField("  Insert password here", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
+                        TextField("  Insert password here", text: $password)
                             .frame(height: 30.0)
                             .border(Color.gray, width:1)
                             .padding(.horizontal, 22.0)
