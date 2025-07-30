@@ -6,7 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD2F45432E3ABC57000EC953 /* SecondViewofMathQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F45422E3ABC57000EC953 /* SecondViewofMathQuiz.swift */; };
+		BD2F45452E3ACC3B000EC953 /* ThirdViewofMathQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F45442E3ACC3B000EC953 /* ThirdViewofMathQuiz.swift */; };
+		BD2F45472E3AD698000EC953 /* FourthViewofMathQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2F45462E3AD698000EC953 /* FourthViewofMathQuiz.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		BD2F45422E3ABC57000EC953 /* SecondViewofMathQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewofMathQuiz.swift; sourceTree = "<group>"; };
+		BD2F45442E3ACC3B000EC953 /* ThirdViewofMathQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewofMathQuiz.swift; sourceTree = "<group>"; };
+		BD2F45462E3AD698000EC953 /* FourthViewofMathQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewofMathQuiz.swift; sourceTree = "<group>"; };
 		BDC8D1922E3933DE00EFDB86 /* SATisfyingPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SATisfyingPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +41,9 @@
 		BDC8D1892E3933DE00EFDB86 = {
 			isa = PBXGroup;
 			children = (
+				BD2F45462E3AD698000EC953 /* FourthViewofMathQuiz.swift */,
+				BD2F45422E3ABC57000EC953 /* SecondViewofMathQuiz.swift */,
+				BD2F45442E3ACC3B000EC953 /* ThirdViewofMathQuiz.swift */,
 				BDC8D1942E3933DE00EFDB86 /* SATisfyingPrep */,
 				BDC8D1932E3933DE00EFDB86 /* Products */,
 			);
@@ -119,6 +131,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD2F45432E3ABC57000EC953 /* SecondViewofMathQuiz.swift in Sources */,
+				BD2F45452E3ACC3B000EC953 /* ThirdViewofMathQuiz.swift in Sources */,
+				BD2F45472E3AD698000EC953 /* FourthViewofMathQuiz.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
