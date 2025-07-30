@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
+//  mainPage.swift
 //  SATisfyingPrep
 //
-//  Created by Scholar on 7/29/25.
+//  Created by Scholar on 7/30/25.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct mainPage: View {
     @State var name = ""
     @State var password = ""
     var body: some View {
@@ -28,7 +28,7 @@ struct ContentView: View {
                     .cornerRadius(10)
                     .ignoresSafeArea()
                     ZStack{
-                        Text("Sign in ______________________")
+                        Text("User Profile ______________________")
                             .font(.title)
                             .padding(.bottom, 570.0)
                         Text("  Username:")
@@ -57,15 +57,15 @@ struct ContentView: View {
                         .padding(.top, 100.0)
                     }
                 }
-            }//zstack
+            }
+            .padding()
             
-        }//navigation
-    }//body
-    
-}//struct
+        }
 
-
+    }
+}
 
 #Preview {
-    ContentView()
+    mainPage()
 }
+
