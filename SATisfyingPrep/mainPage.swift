@@ -28,7 +28,7 @@ struct mainPage: View {
                     .cornerRadius(10)
                     .ignoresSafeArea()
                     ZStack{
-                        Text("Sign in ______________________")
+                        Text("User Profile ______________________")
                             .font(.title)
                             .padding(.bottom, 570.0)
                         Text("  Username:")
