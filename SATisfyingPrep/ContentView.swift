@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct secondViewFile: View {
     var body: some View {
         NavigationStack {
             ZStack {
