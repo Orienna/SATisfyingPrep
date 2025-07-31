@@ -10,10 +10,10 @@ struct ContentView: View {
   var body: some View {
     NavigationStack {
       ZStack {
-        Image("purpleBG") // Replace with the name of your asset
+        Image("purpleBG")
           .resizable()
           .scaledToFill()
-          .ignoresSafeArea() // Make it cover the whole screen
+          .ignoresSafeArea()
         VStack {
           Image("logo")
             .resizable(resizingMode: .stretch)

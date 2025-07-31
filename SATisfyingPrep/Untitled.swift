@@ -40,8 +40,6 @@ struct Untitled: View {
         }//struct
 
 
-
-
 #Preview {
     Untitled()
 }
