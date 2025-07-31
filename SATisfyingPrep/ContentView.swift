@@ -9,59 +9,44 @@ import SwiftUI
 
 struct secondViewFile: View {
     var body: some View {
-        ZStack {
-            Color("backgroundPurple").ignoresSafeArea()
-            VStack {
-                Image("SAT2")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.leading, 150.0)
-//                Spacer()
-//                    .padding()
-//                Spacer()
-//                    .padding()
-                ZStack{
-                    Rectangle()
-                    .fill(Color.white)
-                    .cornerRadius(10)
-                    .ignoresSafeArea()
-                    ZStack{
-                        Text("Sign in ______________________")
-                            .font(.title)
-                            .padding(.bottom, 570.0)
-                        Text("  Username:")
-                            .font(.title3)
-                            .padding([.bottom, .trailing], 240.0)
-                            .padding(.bottom, 150.0)
-                        TextField("  Insert username here", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
-                            .frame(height: 30.0)
-                            .border(Color.gray, width:1)
-                            .padding(.bottom, 300.0)
-                            .padding(.horizontal, 22.0)
-                        Text("  Password:")
-                            .font(.title3)
-                            .padding(.trailing, 240.0)
-                            .padding(.bottom, 180.0)
-                        TextField("  Insert password here", text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
-                            .frame(height: 30.0)
-                            .border(Color.gray, width:1)
-                            .padding(.horizontal, 22.0)
-                            .padding(.bottom, 80.0)
-                        Button("Submit") {
-                            /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+        NavigationStack {
+            ZStack {
+                Image("purpleBG") // Replace with the name of your asset
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea() // Make it cover the whole screen
+                VStack {
+                    Image("logo")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.bottom, 50.0)
+                        .frame(width: 300.0, height: 300.0)
+                        .cornerRadius(20)
+                    
+                    NavigationLink(destination: mainPage()) {
+                        Text("Sign in")
+                            .frame(width: 300.0, height: 60.0)
+                            .background(Color.white)
+                            .cornerRadius(10)
+                        
                     }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.purple)
-                        .padding(.top, 100.0)
+                    .padding()
+                    NavigationLink(destination: mainPage()) {
+                        Text("Log in")
+                            .frame(width: 300.0, height: 60.0)
+                            .background(Color.white)
+                            .cornerRadius(10)
                     }
+                    
                 }
-            }
-            .padding()
+            }//zstack
             
-        }
+        }//navigation
+    }//body
+    
+}//struct
 
-    }
-}
+
 
 #Preview {
     ContentView()
