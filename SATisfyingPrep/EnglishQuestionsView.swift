@@ -90,6 +90,11 @@ struct EnglishQuestionsView: View {
             shuffled1 = Array(EnglishQ.shuffled().prefix(10))
         }//onappear
     }//body
+    func percentage() -> Double {
+        let ratio = Double(count)/Double(shuffled1.count)
+        let divided1 = ratio / 4
+        return (divided1 * 100).rounded() / 100
+    }
 }//struct
 
 #Preview {

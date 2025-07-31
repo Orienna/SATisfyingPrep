@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct buttonSATwork: View {
+    @AppStorage("mathProgress") var mathProgress: Double = 0.0
+    @AppStorage("rwProgress") var rwProgress: Double = 0.0
+    
+    @AppStorage("rwUnlockedString") private var rwUnlockedString = "true,false,false,false"
+
+    
+//    @AppStorage("mathUnlocked") var mathUnlocked: [Bool] = [true, false, false, false]
+//    @AppStorage("rwUnlocked") var rwUnlocked: [Bool] = [true, false, false, false]
+    
     @State private var name = ""
     var body: some View {
         NavigationStack {
@@ -88,6 +97,10 @@ struct buttonSATwork: View {
                                 }//HStack
                                 
                             }//ZStack
+                            ProgressView(value: mathProgress)
+                                .frame(width: 300)
+                            Text("\(Int(mathProgress * 100))% Complete.")
+                                .font(.footnote)
                             .padding(.bottom)
                             Spacer()
                             
@@ -147,11 +160,23 @@ struct buttonSATwork: View {
                                 
                                 
                             }//ZStack
+                            ProgressView(value: rwProgress)
+                                .frame(width: 300)
+                            if rwProgress == 1 {
+                                NavigationLink(destination: EnglishQuestionsView()){
+                                    Text("Go to page!")
+                                        .font(.title2)
+                                        .fontWeight(.medium)
+                                        .foregroundColor(Color.white)
+                            }
+                            Text("\(Int(rwProgress * 100))% Complete.")
+                                .font(.caption)
                             .padding(.bottom)
                             
                             
                         }
                         .padding(.bottom, 200.0)//VStack
+                        
                         
                     }//ZStack
                     Spacer()
@@ -159,6 +184,7 @@ struct buttonSATwork: View {
                 .padding()
                 
             }//ZStack
+            
             
         }
         
