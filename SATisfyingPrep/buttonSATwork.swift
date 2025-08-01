@@ -113,7 +113,7 @@ struct buttonSATwork: View {
                                 
                                 HStack{
                                     VStack(alignment: .leading){
-                                        NavigationLink(destination: EnglishQuestionsView()){
+                                        NavigationLink(destination: EnglishQuestionsView()) {
                                             Text("Go to page!")
                                                 .font(.title2)
                                                 .fontWeight(.medium)
@@ -165,28 +165,28 @@ struct buttonSATwork: View {
                             VStack{
                                 ProgressView(value: rwProgress)
                                     .frame(width: 300)
-                                if rwProgress == 1 {
-                                    NavigationLink(destination: EnglishQuestionsView()){
-                                        Text("Go to page!")
-                                            .font(.title2)
-                                            .fontWeight(.medium)
-                                            .foregroundColor(Color.white)
-                                    }
-                                    Text("\(Int(rwProgress * 100))% Complete.")
-                                        .font(.caption)
-                                        .padding(.bottom)
-                                    
-                                    
-                                }
+//                                if rwProgress == 1 {
+//                                    NavigationLink(destination: EnglishQuestionsView()){
+//                                        Text("Go to page!")
+//                                            .font(.title2)
+//                                            .fontWeight(.medium)
+//                                            .foregroundColor(Color.white)
+//                                    }
+//                                    Text("\(Int(rwProgress * 100))% Complete.")
+//                                        .font(.caption)
+//                                        .padding(.bottom)
+//                                }
+                                Text("\(Int(rwProgress * 100))% Complete.")
+                                    .font(.caption)
+                                    .padding(.bottom)
                             }
-                            Text("\(Int(rwProgress * 100))% Complete.")
-                                .font(.caption)
-                                .padding(.bottom)
+                            
                             .padding(.bottom, 100.0)
                             //VStack
-                            
-                            
-                            
+                            .onAppear {
+                                // This triggers view refresh when returning
+                                _ = rwProgress
+                            }
                         }//ZStack
                         Spacer()
                     }//VStack
@@ -202,7 +202,7 @@ struct buttonSATwork: View {
 }
     
     
-    #Preview {
-        buttonSATwork()
-    }
+#Preview {
+    buttonSATwork()
+}
 

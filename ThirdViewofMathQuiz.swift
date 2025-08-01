@@ -15,7 +15,7 @@ struct ThirdViewofMathQuiz: View {
       let correctAnswers3 = ["d+j=68 and d+20 = j", "(6,-6)"]
       NavigationStack{
         ZStack{
-          Color("PeriWrinkle")
+          Color("backgroundPurple")
             .ignoresSafeArea()
           VStack{
             Text("Math Quiz")
@@ -100,6 +100,10 @@ struct ThirdViewofMathQuiz: View {
               NavigationLink(destination: FourthViewofMathQuiz()) {
                 Text("Next Page")
                   .multilineTextAlignment(.center)
+                  .foregroundColor(Color.white)
+                  .frame(width: 100.0, height: 40)
+                  .background(Color.skyBlue)
+                  .cornerRadius(10)
               }
             }
             .padding()

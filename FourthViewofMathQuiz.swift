@@ -9,12 +9,12 @@ struct FourthViewofMathQuiz: View {
     @State private var answerMessage7 = "Waiting for your answer..."
     @State private var answerMessage8 = "Waiting for your answer..."
   var body: some View {
-      var questions4 = ["Question 7: Dominique is allowed to play up to 8 hours of video games this week. They want to play video games for at least 4 hours this weekend. Which of the following can be used to represent t, the number of hours they can play video games before the weekend?", "Question 8: Ele's car is x years old, and Kat's car is y years old. Kat's car is 3 times as old as Ele's car. If Kat's car is also 6 years older than Ele's car, which of the following systems of equations best models this situation?", "Question 9: Dante's goal this year is to read 100 books. The expression above models the number of books Dante has left to read m months after the beginning of the year. Based on the expression, how many books does Dante have left to read after 4 months?"]
-    var answers4 = [["dj=68 and d-j = 20", "dj=68j and d+20 = j","d+j=68 and d+20 = j"], ["(0,6)", "(-6,6)", "(6,-6)", "(1,4)"]]
-    var correctAnswers4 = ["d+j=68 and d+20 = j", "(6,-6)"]
+      let questions4 = ["Question 7: Dominique is allowed to play up to 8 hours of video games this week. They want to play video games for at least 4 hours this weekend. Which of the following can be used to represent t, the number of hours they can play video games before the weekend?", "Question 8: Ele's car is x years old, and Kat's car is y years old. Kat's car is 3 times as old as Ele's car. If Kat's car is also 6 years older than Ele's car, which of the following systems of equations best models this situation?", "Question 9: Dante's goal this year is to read 100 books. The expression above models the number of books Dante has left to read m months after the beginning of the year. Based on the expression, how many books does Dante have left to read after 4 months?"]
+      let answers4 = [["dj=68 and d-j = 20", "dj=68j and d+20 = j","d+j=68 and d+20 = j"], ["(0,6)", "(-6,6)", "(6,-6)", "(1,4)"]]
+      let correctAnswers4 = ["d+j=68 and d+20 = j", "(6,-6)"]
       NavigationStack{
         ZStack{
-          Color("PeriWrinkle")
+          Color("backgroundPurple")
             .ignoresSafeArea()
           VStack{
             Text("Math Quiz")
@@ -99,6 +99,10 @@ struct FourthViewofMathQuiz: View {
               NavigationLink(destination: FifthViewofMathQuizworking()) {
                 Text("Next Page")
                   .multilineTextAlignment(.center)
+                  .foregroundColor(Color.white)
+                  .frame(width: 100.0, height: 40)
+                  .background(Color.skyBlue)
+                  .cornerRadius(10)
               }
             }
             .padding()

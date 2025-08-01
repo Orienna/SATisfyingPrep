@@ -5,16 +5,19 @@
 // Created by Scholar on 7/29/25.
 //
 
+
 import SwiftUI
 
 struct EnglishQuestionsView: View {
+    @AppStorage("rwProgress") var rwProgress: Double = 0.0
     @State private var feedback = ""
     @State private var score = 0
     @State private var questionCount = 0
     @State private var answer = ""
     @State private var shuffledQuestions: [Questions] = []
     @State private var currentIndex = 0
-
+    @State private var hasUpdatedProgress = false
+    
     func formattedQuestion(_ question: Questions) -> Text {
         guard let phrases = question.phrasesToBold, !phrases.isEmpty else {
             return Text(question.questions)
@@ -156,7 +159,14 @@ struct EnglishQuestionsView: View {
             phrasesToBold: ["is setting fire to"]
         )
     ]
-
+    func updateProgress() {
+        if !hasUpdatedProgress {
+            let quizWeight = Double(score) / Double(shuffledQuestions.count)
+            rwProgress += quizWeight * 0.25
+            rwProgress = min(rwProgress, 1.0)
+            hasUpdatedProgress = true
+        }
+    }
     var currentQuestion: Questions {
         if shuffledQuestions.isEmpty {
             return allQuestions[0]
@@ -165,62 +175,97 @@ struct EnglishQuestionsView: View {
     }
 
     var body: some View {
-        VStack {
-            Text("Question \(currentIndex + 1)")
-                .padding()
-
-            formattedQuestion(currentQuestion)
-                .font(.system(size: 18))
-                .multilineTextAlignment(.center)
-                .padding()
-
-            Text("Options:")
-                .padding()
-
-            ForEach(0..<4) { i in
-                Text("\(Character(UnicodeScalar(65 + i)!))) \(currentQuestion.possibleAnswers[i])")
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal)
+        ZStack {
+            Color("backgroundPurple").ignoresSafeArea()
+            VStack {
+                Image("SAT2")
+                    .resizable(resizingMode: .stretch)
+                    .aspectRatio(contentMode: .fit)
+                    .padding(.leading, 150.0)
+                ZStack{
+                    Rectangle()
+                        .fill(Color.white)
+                        .cornerRadius(10)
+                        .ignoresSafeArea()
+                }
             }
-
-            TextField("Type your answer here, click return after answering.", text: $answer)
-                .multilineTextAlignment(.center)
-                .frame(height: 50)
-                .frame(maxWidth: .infinity)
-                .border(Color.black, width: 1)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.black, lineWidth: 2)
-                )
-                .padding(.horizontal, 10)
-                .onSubmit {
-                    let userAnswer = answer.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-                    if userAnswer == currentQuestion.rightAnswer {
-                        feedback = "Correct!"
-                        score += 1
-                    } else {
-                        feedback = "Incorrect...the correct answer is: \(currentQuestion.rightAnswer)"
-                    }
-                    questionCount += 1
-                    answer = ""
-                }
-
-            Text(feedback)
-                .padding()
-
-            if currentIndex < (shuffledQuestions.count - 1) {
-                Button("Next Question") {
-                    currentIndex += 1
-                    feedback = ""
-                }
-                .padding()
-            } else if currentIndex == (shuffledQuestions.count - 1) && !feedback.isEmpty {
-                Text("Quiz complete! Your score: \(score) / \(shuffledQuestions.count)")
+            VStack {
+                Text("Question \(currentIndex + 1)")
                     .padding()
+
+                formattedQuestion(currentQuestion)
+                    .font(.system(size: 18))
+                    .multilineTextAlignment(.center)
+                    .padding()
+
+                Text("Options:")
+                    .padding()
+
+                ForEach(0..<4) { i in
+                    Text("\(Character(UnicodeScalar(65 + i)!))) \(currentQuestion.possibleAnswers[i])")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.horizontal)
+                }
+
+                TextField("Type your answer here, click return after answering.", text: $answer)
+                    .multilineTextAlignment(.center)
+                    .frame(height: 50)
+                    .frame(maxWidth: .infinity)
+                    .border(Color.black, width: 1)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.black, lineWidth: 2)
+                    )
+                    .padding(.horizontal, 10)
+                    .onSubmit {
+                        let userAnswer = answer.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+                        if userAnswer == currentQuestion.rightAnswer {
+                            feedback = "Correct!"
+                            score += 1
+                        } else {
+                            feedback = "Incorrect...the correct answer is: \(currentQuestion.rightAnswer)"
+                        }
+                        questionCount += 1
+                        answer = ""
+                    }
+
+                Text(feedback)
+                    .padding()
+
+                if currentIndex < shuffledQuestions.count - 1 {
+                    // Show the "Next Question" button only after an answer is selected
+                    if !feedback.isEmpty {
+                        Button("Next Question") {
+                            currentIndex += 1
+                            feedback = ""  // Reset feedback for the next question
+                        }
+                        .padding()
+                    }
+                } else {
+                    // If we are on the last question
+                    if !feedback.isEmpty {
+                        // Update progress only once after the last question is answered
+                        if !hasUpdatedProgress {
+                            let quizWeight = Double(score) / Double(shuffledQuestions.count)
+//                            rwProgress += quizWeight * 0.25
+//                            rwProgress = min(rwProgress, 1.0)
+//                            hasUpdatedProgress = true
+                        }
+
+                        // Display the final score and completion message
+                        Text("Quiz complete! Your score: \(score) / \(shuffledQuestions.count)")
+                            .padding()
+                    } else {
+                        // Prevent the user from progressing without answering the last question
+                        Text("Please answer the last question to complete the quiz.")
+                            .padding()
+                    }
+                }
             }
-        }
-        .onAppear {
-            shuffledQuestions = allQuestions.shuffled()
+            .onAppear {
+                shuffledQuestions = allQuestions.shuffled().prefix(10).map { $0 }
+            }
+            
         }
     }
 }

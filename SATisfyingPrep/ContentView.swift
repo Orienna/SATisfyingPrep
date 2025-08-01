@@ -24,7 +24,7 @@ struct ContentView: View {
                         .cornerRadius(20)
                     
                     NavigationLink(destination: mainPage()) {
-                        Text("Sign in")
+                        Text("Sign up")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.skyBlue)
