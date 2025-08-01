@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct secondViewFile: View {
+struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
@@ -24,7 +24,7 @@ struct secondViewFile: View {
                         .cornerRadius(20)
                     
                     NavigationLink(destination: mainPage()) {
-                        Text("Sign in")
+                        Text("Sign up")
                             .font(.title2)
                             .fontWeight(.bold)
                             .foregroundColor(Color.skyBlue)

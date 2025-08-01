@@ -8,6 +8,15 @@
 import SwiftUI
 
 struct buttonSATwork: View {
+    @AppStorage("mathProgress") var mathProgress: Double = 0.0
+    @AppStorage("rwProgress") var rwProgress: Double = 0.0
+    
+    @AppStorage("rwUnlockedString") private var rwUnlockedString = "true,false,false,false"
+    
+    
+    //    @AppStorage("mathUnlocked") var mathUnlocked: [Bool] = [true, false, false, false]
+    //    @AppStorage("rwUnlocked") var rwUnlocked: [Bool] = [true, false, false, false]
+    
     @State private var name = ""
     var body: some View {
         NavigationStack {
@@ -35,7 +44,7 @@ struct buttonSATwork: View {
                             Text("like to study?")
                                 .font(.title2)
                                 .fontWeight(.bold)
-                                Spacer()
+                            Spacer()
                             
                             ZStack{
                                 Rectangle()
@@ -55,7 +64,7 @@ struct buttonSATwork: View {
                                                 .frame(width: 100.0, height: 60.0)
                                                 .background(Color.periWrinkle)
                                                 .cornerRadius(10)
-                                                
+                                            
                                         }
                                         .padding(.leading, 180.0)
                                         .padding(.bottom, -57.0)
@@ -88,7 +97,11 @@ struct buttonSATwork: View {
                                 }//HStack
                                 
                             }//ZStack
-                            .padding(.bottom)
+                            ProgressView(value: mathProgress)
+                                .frame(width: 300)
+                            Text("\(Int(mathProgress * 100))% Complete.")
+                                .font(.footnote)
+                                .padding(.bottom)
                             Spacer()
                             
                             ZStack{
@@ -100,12 +113,12 @@ struct buttonSATwork: View {
                                 
                                 HStack{
                                     VStack(alignment: .leading){
-                                        NavigationLink(destination: EnglishQuestionsView()){
+                                        NavigationLink(destination: EnglishQuestionsView()) {
                                             Text("Go to page!")
                                                 .font(.title2)
                                                 .fontWeight(.medium)
                                                 .foregroundColor(Color.white)
-                                                
+                                            
                                                 .padding(.leading, 6.0)
                                                 .frame(width: 100.0, height: 60.0)
                                                 .background(Color.brightPink)
@@ -143,30 +156,53 @@ struct buttonSATwork: View {
                                         
                                     }
                                     .padding(.bottom)//VStack
+                                    
+                                    
                                 }//HStack
                                 
                                 
                             }//ZStack
-                            .padding(.bottom)
+                            VStack{
+                                ProgressView(value: rwProgress)
+                                    .frame(width: 300)
+//                                if rwProgress == 1 {
+//                                    NavigationLink(destination: EnglishQuestionsView()){
+//                                        Text("Go to page!")
+//                                            .font(.title2)
+//                                            .fontWeight(.medium)
+//                                            .foregroundColor(Color.white)
+//                                    }
+//                                    Text("\(Int(rwProgress * 100))% Complete.")
+//                                        .font(.caption)
+//                                        .padding(.bottom)
+//                                }
+                                Text("\(Int(rwProgress * 100))% Complete.")
+                                    .font(.caption)
+                                    .padding(.bottom)
+                            }
                             
-                            
-                        }
-                        .padding(.bottom, 200.0)//VStack
-                        
-                    }//ZStack
-                    Spacer()
-                }//VStack
-                .padding()
+                            .padding(.bottom, 100.0)
+                            //VStack
+                            .onAppear {
+                                // This triggers view refresh when returning
+                                _ = rwProgress
+                            }
+                        }//ZStack
+                        Spacer()
+                    }//VStack
+                    .padding()
+                    
+                }//ZStack
                 
-            }//ZStack
+                
+            }
             
-        }
-        
-    }//varBody
-}//struct
+        }//varBody
+    }//struct
+}
     
     
-    #Preview {
-        buttonSATwork()
-    }
+#Preview {
+    buttonSATwork()
+}
 

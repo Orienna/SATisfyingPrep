@@ -6,7 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		BD668E492E3A8CC200B9C0EF /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD668E472E3A8CC200B9C0EF /* Questions.swift */; };
+		BD668E572E3C152E00B9C0EF /* SecondViewofMathQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD668E562E3C152E00B9C0EF /* SecondViewofMathQuiz.swift */; };
+		BD668E592E3C157500B9C0EF /* ThirdViewofMathQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD668E582E3C157500B9C0EF /* ThirdViewofMathQuiz.swift */; };
+		BD668E5B2E3C159C00B9C0EF /* FourthViewofMathQuiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD668E5A2E3C159C00B9C0EF /* FourthViewofMathQuiz.swift */; };
+		BD668E5D2E3C15D900B9C0EF /* FifthViewofMathQuizworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD668E5C2E3C15D900B9C0EF /* FifthViewofMathQuizworking.swift */; };
+		BD668E5F2E3C163200B9C0EF /* ScorePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD668E5E2E3C163200B9C0EF /* ScorePage.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		BD668E472E3A8CC200B9C0EF /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		BD668E562E3C152E00B9C0EF /* SecondViewofMathQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewofMathQuiz.swift; sourceTree = "<group>"; };
+		BD668E582E3C157500B9C0EF /* ThirdViewofMathQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewofMathQuiz.swift; sourceTree = "<group>"; };
+		BD668E5A2E3C159C00B9C0EF /* FourthViewofMathQuiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewofMathQuiz.swift; sourceTree = "<group>"; };
+		BD668E5C2E3C15D900B9C0EF /* FifthViewofMathQuizworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewofMathQuizworking.swift; sourceTree = "<group>"; };
+		BD668E5E2E3C163200B9C0EF /* ScorePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorePage.swift; sourceTree = "<group>"; };
 		BDC8D1922E3933DE00EFDB86 /* SATisfyingPrep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SATisfyingPrep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +47,12 @@
 		BDC8D1892E3933DE00EFDB86 = {
 			isa = PBXGroup;
 			children = (
+				BD668E562E3C152E00B9C0EF /* SecondViewofMathQuiz.swift */,
+				BD668E582E3C157500B9C0EF /* ThirdViewofMathQuiz.swift */,
+				BD668E5A2E3C159C00B9C0EF /* FourthViewofMathQuiz.swift */,
+				BD668E5C2E3C15D900B9C0EF /* FifthViewofMathQuizworking.swift */,
+				BD668E5E2E3C163200B9C0EF /* ScorePage.swift */,
+				BD668E472E3A8CC200B9C0EF /* Questions.swift */,
 				BDC8D1942E3933DE00EFDB86 /* SATisfyingPrep */,
 				BDC8D1932E3933DE00EFDB86 /* Products */,
 			);
@@ -119,6 +140,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD668E592E3C157500B9C0EF /* ThirdViewofMathQuiz.swift in Sources */,
+				BD668E492E3A8CC200B9C0EF /* Questions.swift in Sources */,
+				BD668E572E3C152E00B9C0EF /* SecondViewofMathQuiz.swift in Sources */,
+				BD668E5D2E3C15D900B9C0EF /* FifthViewofMathQuizworking.swift in Sources */,
+				BD668E5B2E3C159C00B9C0EF /* FourthViewofMathQuiz.swift in Sources */,
+				BD668E5F2E3C163200B9C0EF /* ScorePage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
